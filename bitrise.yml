@@ -51,17 +51,18 @@ workflows:
         - gradlew_path: "$PROJECT_LOCATION/gradlew"
     - gradle-runner@1:
         inputs:
-        - gradle_task: assemble${ANDROID_FLAVOR} assemble${testFlavor}AndroidTest
+        - gradle_task: assemble${ANDROID_FLAVOR} assemble${ANDROID_TEST_FLAVOR}AndroidTest
+        - gradlew_path: "$PROJECT_LOCATION/gradlew"
     - android-lint@0:
         inputs:
         - project_location: "$PROJECT_LOCATION"
         - module: "$MODULE"
-        - variant: "$testFlavor"
+        - variant: "$ANDROID_TEST_FLAVOR"
     - android-unit-test@1:
         inputs:
         - project_location: "$PROJECT_LOCATION"
         - module: "$MODULE"
-        - variant: "$testFlavor"
+        - variant: "$ANDROID_TEST_FLAVOR"
     - virtual-device-testing-for-android@1:
         inputs:
         - test_type: instrumentation
@@ -116,7 +117,7 @@ workflows:
         inputs:
         - project_location: "$PROJECT_LOCATION"
         - module: "$MODULE"
-        - variant: "$VARIANT"
+        - variant: "release"
     - gradle-runner@1:
         inputs:
         - gradle_task: assembleRelease assembleAndroidTestRelease
@@ -125,7 +126,7 @@ workflows:
         inputs:
         - project_location: "$PROJECT_LOCATION"
         - module: "$MODULE"
-        - variant: "$VARIANT"
+        - variant: "release"
     - virtual-device-testing-for-android@1:
         inputs:
         - test_type: instrumentation
