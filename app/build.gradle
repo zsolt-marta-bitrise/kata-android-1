@@ -5,7 +5,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     signingConfigs {
         release {
-            storeFile file('/Users/zsolt.marta/work/code/kata/KataAndroid/keystore')
+            storeFile file('keystore')
             storePassword '123456'
             keyAlias 'key'
             keyPassword '123456'
