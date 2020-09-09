@@ -120,6 +120,7 @@ workflows:
     - gradle-runner@1:
         inputs:
         - gradle_task: assembleRelease assembleAndroidTestRelease
+        - gradlew_path: "$PROJECT_LOCATION/gradlew"
     - android-unit-test@1:
         inputs:
         - project_location: "$PROJECT_LOCATION"
