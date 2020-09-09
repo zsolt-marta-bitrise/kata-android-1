@@ -141,7 +141,7 @@ workflows:
         - variant: release
     - gradle-runner@1:
         inputs:
-        - gradle_task: assembleRelease assembleAndroidTestRelease
+        - gradle_task: assembleRelease assembleAndroidTest
         - gradlew_path: $PROJECT_LOCATION/gradlew
     - android-unit-test@1:
         inputs:
