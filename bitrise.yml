@@ -148,6 +148,7 @@ workflows:
         title: Deploy on AppCenter
         inputs:
         - api_token: $APPCENTER_API_TOKEN
+        - app_path: "/bitrise/deploy/app-release.apk"
         - owner_name: zsolt.marta-bitrise.io
         - app_name: test-android-kata-1
         
