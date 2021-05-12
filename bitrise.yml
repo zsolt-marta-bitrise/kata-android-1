@@ -144,6 +144,13 @@ workflows:
         - gradle_task: assembleRelease assembleAndroidTest
         - gradlew_path: $PROJECT_LOCATION/gradlew
     - deploy-to-bitrise-io@1: {}
+    - git::https://github.com/koral--/steps-appcenter-deploy-android.git@patch-1:
+        title: Deploy on AppCenter
+        inputs:
+        - api_token: $APPCENTER_API_TOKEN
+        - owner_name: zsolt.marta-bitrise.io
+        - app_name: test-android-kata-1
+        
 app:
   envs:
   - opts:
